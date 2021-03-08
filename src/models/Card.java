@@ -1,5 +1,7 @@
 package models;
 
+import javafx.scene.image.Image;
+
 import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +10,7 @@ public class Card {
     private String faceName;
     private int faceValue;
     private String suit;
+    private Image image;
 
 
     /**
@@ -23,6 +26,20 @@ public class Card {
         setFaceName(faceName);
         setSuit(suit);
         setFaceValue(faceValue);
+        setImage();
+    }
+        //FOR IMAGES
+        private void setImage()
+        //first we will declare placeholder for the string
+        //facename of the card the name of the suite.png
+        {
+            String filePath = String.format("images/%s_of_%s.png",faceName,suit);
+            System.out.println(filePath);
+            this.image = new Image(filePath);
+        }
+
+    public Image getImage() {
+        return image;
     }
 
     /**
@@ -35,6 +52,7 @@ public class Card {
         setFaceName(faceName);
         setSuit(suit);
         setFaceValue(calculateFaceValue());
+        setImage();
     }
 
     /**
@@ -78,8 +96,8 @@ public class Card {
      */
     public static List<String> getValidFaceNames()
     {
-        return Arrays.asList("two","three","four","five","six","seven","eight","nine",
-                "ten","jack","queen","king","ace");
+        return Arrays.asList("2","3","4","5","6","7","8","9",
+                "10","jack","queen","king","ace");
     }
 
     public void setFaceValue(int faceValue) {
