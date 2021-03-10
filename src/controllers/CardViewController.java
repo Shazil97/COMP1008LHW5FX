@@ -27,14 +27,22 @@ public class CardViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-      deckOfCards = new DeckOfCards();   //Intializing the constructor
-        Card card = deckOfCards.dealTopCard();
-        //set method for facenamelabel
-        facenamelabel.setText(card.getFaceName()); //call method setText, this set method will accept the string which
-        // update the string called Facename
+        deckOfCards = new DeckOfCards();   //Intializing the constructor
 
-        // setmethod for suitlabel
-        suitlabel.setText(card.getSuit());
-        imageView.setImage(card.getImage());
+    }
+
+    @FXML //Put this method in Button --> Code area in ACTION id
+
+    private void showNextCard() {
+        Card card = deckOfCards.dealTopCard();
+        if (card != null) {
+            //set method for facenamelabel
+            facenamelabel.setText(card.getFaceName()); //call method setText, this set method will accept the string which
+            // update the string called Facename
+
+            // setmethod for suitlabel
+            suitlabel.setText(card.getSuit());
+            imageView.setImage(card.getImage());
+        }
     }
 }

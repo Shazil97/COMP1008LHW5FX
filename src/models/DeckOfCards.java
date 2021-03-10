@@ -52,4 +52,14 @@ public class DeckOfCards {
     {
         Collections.shuffle(deck);
     }
+    /*
+    public Card dealTopCard()
+    {
+        if (deck.size()==0)
+            return null;
+        else
+            return deck.remove(0);
+    }
+
+     */
 }
