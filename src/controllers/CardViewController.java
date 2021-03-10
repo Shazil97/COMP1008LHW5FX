@@ -19,6 +19,17 @@ public class CardViewController implements Initializable {
     @FXML
     private Label suitlabel;
 
+    /*
+    //Error message for labels
+    @FXML
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        errorMsgLabel.setVisible(false);
+        deckOfCards = new DeckOfCards();
+        showNextCard();
+    }
+
+     */
+
     @FXML
     private ImageView imageView;
 
@@ -44,5 +55,13 @@ public class CardViewController implements Initializable {
             suitlabel.setText(card.getSuit());
             imageView.setImage(card.getImage());
         }
+        /*
+        else //other wise it will show msg
+        {
+            errorMsgLabel.setVisible(true);
+            errorMsgLabel.setText("No cards left");
+        }
+
+         */
     }
 }
